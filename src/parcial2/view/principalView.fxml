@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="505.0" prefWidth="658.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="parcial2.controller.PrincipalViewController">
+   <children>
+      <TabPane layoutY="-3.0" prefHeight="505.0" prefWidth="658.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Personas">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="456.0" prefWidth="600.0">
+                     <children>
+                        <TextField fx:id="txtcodigoPer" layoutX="101.0" layoutY="87.0" prefHeight="25.0" prefWidth="184.0" />
+                        <TextField fx:id="txtNombrePer" layoutX="102.0" layoutY="120.0" prefHeight="25.0" prefWidth="184.0" />
+                        <TextField fx:id="txtTelefonoPer" layoutX="102.0" layoutY="152.0" prefHeight="25.0" prefWidth="183.0" />
+                        <TextField fx:id="txtEmailPer" layoutX="393.0" layoutY="87.0" prefHeight="25.0" prefWidth="149.0" />
+                        <TextField fx:id="txtDireccionPer" layoutX="393.0" layoutY="120.0" prefHeight="25.0" prefWidth="149.0" />
+                        <Label layoutX="14.0" layoutY="91.0" text="Codigo:" />
+                        <Label layoutX="14.0" layoutY="124.0" text="Nombre:" />
+                        <Label layoutX="17.0" layoutY="156.0" text="Telefono:" />
+                        <Label layoutX="325.0" layoutY="91.0" prefHeight="17.0" prefWidth="55.0" text="Email:" />
+                        <Label layoutX="325.0" layoutY="124.0" prefHeight="17.0" prefWidth="55.0" text="Direccion" />
+                        <TableView fx:id="tblPersonas" layoutX="47.0" layoutY="249.0" prefHeight="183.0" prefWidth="495.0">
+                          <columns>
+                            <TableColumn fx:id="columnCodigoPer" prefWidth="88.0" text="Codigo" />
+                            <TableColumn fx:id="columnNombrePer" prefWidth="97.0" text="Nombre" />
+                              <TableColumn fx:id="columnTelefonoPer" prefWidth="104.0" text="Telefono" />
+                              <TableColumn fx:id="columnDireccionPer" prefWidth="97.0" text="Direccion" />
+                              <TableColumn fx:id="columnEmailPer" prefWidth="108.0" text="Email" />
+                          </columns>
+                        </TableView>
+                        <Button fx:id="btnAgregarPer" layoutX="73.0" layoutY="199.0" mnemonicParsing="false" onAction="#agregarPersonaAction" text="Agregar" />
+                        <Button fx:id="btnActualizarPer" layoutX="252.0" layoutY="199.0" mnemonicParsing="false" text="Actualizar" />
+                        <Button fx:id="btnBuscarPer" layoutX="436.0" layoutY="199.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="78.0" text="Buscar" />
+                        <Button fx:id="btnEliminarPer" layoutX="257.0" layoutY="437.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="79.0" text="Eliminar" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Untitled Tab2">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
