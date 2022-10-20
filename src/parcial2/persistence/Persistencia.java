@@ -159,7 +159,24 @@ public class Persistencia {
 	}
 	
 	
-	
+	public static boolean eliminarPersona(String codigo)
+	{
+		boolean eliminado = false;
+		
+		Principal principal = Persistencia.cargarRecursoPersistenciaXML();
+		for(int i=0; i<principal.getListaPersonas().size();i++)
+		{
+			if(principal.getListaPersonas().get(i).getCodigo().equals(codigo))
+			{
+				principal.getListaPersonas().remove(principal.getListaPersonas().get(i));
+				eliminado=true;
+				ArchivoUtil.eliminarArchivo(RUTA_ARCHIVO_PERSONAS_XML);
+				Persistencia.guardarRecursoPersonaXML(principal);
+				break;
+			}
+		}
+		return eliminado;
+	}
 	
 	
 	

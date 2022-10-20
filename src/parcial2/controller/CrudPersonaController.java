@@ -38,5 +38,10 @@ public class CrudPersonaController {
 		return modelFactoryController.actualizarPersona(codigo, nombre, telefono, email, direccion);
 	}
 	
+	public boolean eliminarPersona(String codigo)
+	{
+		return modelFactoryController.eliminarPersona(codigo);
+	}
+	
 	
 }

@@ -105,4 +105,9 @@ public class ModelFactoryController {
 			return persona;
 		}
 	
+		public boolean eliminarPersona(String codigo)
+		{
+			return Persistencia.eliminarPersona(codigo);
+		}
+		
 }

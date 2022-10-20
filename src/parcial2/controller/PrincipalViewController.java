@@ -117,6 +117,12 @@ public class PrincipalViewController {
     	actualizarPersona();
     }
     
+    @FXML
+    void eliminarPersonasAction(ActionEvent event) {
+    	
+    	eliminarPersona();
+    }
+    
     
     public ObservableList<Persona> getListaPersonas()
     {
@@ -161,8 +167,24 @@ public class PrincipalViewController {
     	String direccion =  txtDireccionPer.getText();
     	
     	persona = crudPersonaController.actualizarPersona(codigo, nombre, telefono, email, direccion);
+    	tblPersonas.refresh();
     	
     	System.out.println("Persona actualizada");
+    }
+    
+    public void eliminarPersona()
+    {
+    	String codigo = txtcodigoPer.getText();
+    	boolean eliminado;
+    	
+    	eliminado = crudPersonaController.eliminarPersona(codigo);
+    	if(eliminado)
+    	{
+    		listaPersona.remove(persona);
+    		tblPersonas.getSelectionModel().clearSelection();
+    		JOptionPane.showMessageDialog(null, "Se eliminó");	
+    	}
+    	
     }
     
     
