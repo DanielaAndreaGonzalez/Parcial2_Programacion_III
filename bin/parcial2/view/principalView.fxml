@@ -39,7 +39,7 @@
                         </TableView>
                         <Button fx:id="btnAgregarPer" layoutX="73.0" layoutY="199.0" mnemonicParsing="false" onAction="#agregarPersonaAction" text="Agregar" />
                         <Button fx:id="btnActualizarPer" layoutX="252.0" layoutY="199.0" mnemonicParsing="false" text="Actualizar" />
-                        <Button fx:id="btnBuscarPer" layoutX="436.0" layoutY="199.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="78.0" text="Buscar" />
+                        <Button fx:id="btnBuscarPer" layoutX="436.0" layoutY="199.0" mnemonicParsing="false" onAction="#buscarPersonaAction" prefHeight="25.0" prefWidth="78.0" text="Buscar" />
                         <Button fx:id="btnEliminarPer" layoutX="257.0" layoutY="437.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="79.0" text="Eliminar" />
                      </children>
                   </AnchorPane>

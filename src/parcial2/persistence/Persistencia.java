@@ -98,7 +98,42 @@ public class Persistencia {
 		return principal;
 	}
 	
+	public static ArrayList<Persona> cargarInformacionPersonaTXT() throws IOException
+	{
+		ArrayList<Persona> listaPersonas = new ArrayList<>();
+		
+		ArrayList<String> contenido = ArchivoUtil.leerArchivo(RUTA_ARCHIVO_PERSONAS_TXT);	
+		String linea = " ";
+		for(int i=0; i<contenido.size(); i++)
+		{
+			linea = contenido.get(i);
+			Persona persona = new Persona();
+			
+			persona.setCodigo(linea.split(";")[0]);
+			persona.setNombre(linea.split(";")[1]);
+			persona.setTelefono(linea.split(";")[2]);
+			persona.setEmail(linea.split(";")[3]);
+			persona.setDireccion(linea.split(";")[4]);
+			listaPersonas.add(persona);	
+		}
+		return listaPersonas;
+	}
 	
+	
+	public static Persona buscarPersona(String codigo) throws IOException
+	{
+		ArrayList<Persona> lista = Persistencia.cargarInformacionPersonaTXT();
+		Persona personaEncontrada = new Persona();
+		for(int i=0; i<lista.size();i++)
+		{
+			Persona personaAux = lista.get(i);
+			if(personaAux.getCodigo().equalsIgnoreCase(codigo))
+			{
+				personaEncontrada = personaAux;
+			}
+		}
+		return personaEncontrada;
+	}
 	
 	
 	

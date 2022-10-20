@@ -77,8 +77,7 @@ public class PrincipalViewController {
     public void setAplicacion(Main aplicacion) 
     {
     	this.aplication = aplicacion;
-    	tblPersonas.setItems(getListaPersonas());
-       	
+    	tblPersonas.setItems(getListaPersonas());   	
     }
     
     @FXML
@@ -105,11 +104,21 @@ public class PrincipalViewController {
 	
     @FXML
     void agregarPersonaAction(ActionEvent event) {
-
-    	agregarPersona();
-    	  	
+    	agregarPersona();   	  	
     }
 	
+    @FXML
+    void buscarPersonaAction(ActionEvent event) {
+    	buscarPersona();
+    }
+    
+    @FXML
+    void actualizarPersonaAction(ActionEvent event) {
+
+    }
+    
+    
+    
     public ObservableList<Persona> getListaPersonas()
     {
     	listaPersona.addAll(modelFactoryController.obtenerListaPersonasXML());
@@ -129,6 +138,28 @@ public class PrincipalViewController {
     	JOptionPane.showMessageDialog(null, "Se agregó la persona con éxito!");
     }
 	
+    
+    
+    public void buscarPersona()
+    {
+    	String codigo = txtcodigoPer.getText();
+    	Persona persona2 = new Persona();
+    	persona2 = crudPersonaController.buscarPersona(codigo);
+    		
+    	txtcodigoPer.setText(persona2.getCodigo());
+    	txtNombrePer.setText(persona2.getNombre());
+    	txtTelefonoPer.setText(persona2.getTelefono());
+    	txtDireccionPer.setText(persona2.getDireccion());
+    	txtEmailPer.setText(persona2.getEmail());	
+    }
+    
+    public void actualizarPersona()
+    {
+    	
+    }
+    
+    
+    
     public void mostrarInformacionPersona(Persona personaSeleccionada)
     {
     	if(personaSeleccionada != null)
@@ -141,5 +172,7 @@ public class PrincipalViewController {
     	}
     }
 	
+    
+    
 
 }
