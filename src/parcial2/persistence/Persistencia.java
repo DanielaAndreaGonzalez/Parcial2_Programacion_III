@@ -135,7 +135,28 @@ public class Persistencia {
 		return personaEncontrada;
 	}
 	
-	
+	public static Persona actualizarPersona(String codigo,String nombre,String telefono,String email,String direccion)
+	{
+		ArrayList<Persona> listaPersonas = Persistencia.cargarInformacionPersona();
+		Principal principal = Persistencia.cargarRecursoPersistenciaXML();
+		Persona persona = new Persona();
+		
+		for(int i=0; i<listaPersonas.size();i++)
+		{
+			if(listaPersonas.get(i).getCodigo().equals(codigo))
+			{
+				principal.getListaPersonas().get(i).setCodigo(codigo);
+				principal.getListaPersonas().get(i).setNombre(nombre);
+				principal.getListaPersonas().get(i).setTelefono(telefono);
+				principal.getListaPersonas().get(i).setEmail(email);
+				principal.getListaPersonas().get(i).setDireccion(direccion);
+				persona = listaPersonas.get(i);	
+				ArchivoUtil.eliminarArchivo(RUTA_ARCHIVO_PERSONAS_XML);
+				Persistencia.guardarRecursoPersonaXML(principal);
+			}
+		}
+		return persona;
+	}
 	
 	
 	

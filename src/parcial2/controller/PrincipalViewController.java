@@ -114,9 +114,8 @@ public class PrincipalViewController {
     
     @FXML
     void actualizarPersonaAction(ActionEvent event) {
-
+    	actualizarPersona();
     }
-    
     
     
     public ObservableList<Persona> getListaPersonas()
@@ -155,7 +154,15 @@ public class PrincipalViewController {
     
     public void actualizarPersona()
     {
+    	String codigo = txtcodigoPer.getText();
+    	String nombre = txtNombrePer.getText();
+    	String telefono = txtTelefonoPer.getText();
+    	String email =  txtEmailPer.getText();
+    	String direccion =  txtDireccionPer.getText();
     	
+    	persona = crudPersonaController.actualizarPersona(codigo, nombre, telefono, email, direccion);
+    	
+    	System.out.println("Persona actualizada");
     }
     
     

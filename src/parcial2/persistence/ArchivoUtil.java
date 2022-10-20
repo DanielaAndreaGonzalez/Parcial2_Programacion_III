@@ -37,6 +37,19 @@ public class ArchivoUtil {
 	
 	
 	static String fechaSistema = "";
+	
+	public static void eliminarArchivo(String ruta)
+	{
+		File archivo = new File(ruta);
+		 boolean estatus = archivo.delete();
+         if (!estatus) {
+             System.out.println("Error no se ha podido eliminar el  archivo");
+        }else{
+             System.out.println("Se ha eliminado el archivo exitosamente");
+        }
+	}
+	
+	
 	/**
 	 * Este metodo recibe una cadena con el contenido que se quiere guardar en el archivo
 	 * @param ruta es la ruta o path donde esta ubicado el archivo

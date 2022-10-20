@@ -97,5 +97,12 @@ public class ModelFactoryController {
 			}	
 			return personaEncontrada;		
 		}
+		
+		public Persona actualizarPersona(String codigo,String nombre, String telefono,String email,String direccion)
+		{
+			Persona persona = new Persona();
+			persona = Persistencia.actualizarPersona(codigo, nombre, telefono, email, direccion);
+			return persona;
+		}
 	
 }

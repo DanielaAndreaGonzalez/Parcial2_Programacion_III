@@ -3,7 +3,11 @@
  */
 package parcial2.controller;
 
+import java.util.ArrayList;
+
 import parcial2.model.Persona;
+import parcial2.model.Principal;
+import parcial2.persistence.Persistencia;
 
 /**
  * @author GonzalezHDanielaA
@@ -29,7 +33,10 @@ public class CrudPersonaController {
 		return modelFactoryController.buscarPersona(codigo);	
 	}
 	
-	
+	public Persona actualizarPersona(String codigo,String nombre,String telefono,String email,String direccion)
+	{
+		return modelFactoryController.actualizarPersona(codigo, nombre, telefono, email, direccion);
+	}
 	
 	
 }
